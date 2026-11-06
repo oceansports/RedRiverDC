@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phu Quoc Divers – Diving & Snorkeling</title>
+<meta name="description" content="Diving and snorkeling day trip in Phu Quoc: Gam Ghi and Kim Quy islets. Hotline 0907 067 786.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Open+Sans:wght@400;600&display=swap&subset=cyrillic,vietnamese" rel="stylesheet">
+<style>
+:root{--abyss:#07122b;--deep:#0b2a45;--reef:#12607a;--sun:#ffd21f;--coral:#ff4a3d;--foam:#e9f5f9;--mute:#9db7c6;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--abyss);color:var(--foam);font:400 16px/1.6 "Open Sans",system-ui,sans-serif;padding-bottom:84px}
+h1,h2,h3{font-family:Montserrat,"Open Sans",sans-serif;line-height:1.1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:rgba(7,18,43,.92);backdrop-filter:blur(8px);border-bottom:1px solid #ffffff1a}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:54px}
+.brand{font:900 17px Montserrat,sans-serif;color:var(--sun);text-decoration:none}
+.lang{display:flex;gap:4px}
+.lang button{font:700 13px Montserrat,sans-serif;background:none;color:var(--foam);border:1.5px solid #ffffff40;border-radius:8px;padding:6px 11px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--sun);color:var(--abyss);border-color:var(--sun)}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:72px 0 64px;background:
+ radial-gradient(circle at 85% 12%,#1a8aa955 0,transparent 38%),
+ radial-gradient(circle at 10% 90%,#ff4a3d22 0,transparent 35%),
+ linear-gradient(180deg,#0f4a66 0,var(--abyss) 100%)}
+.hero h1{font-size:clamp(42px,9vw,92px);font-weight:900;color:var(--sun);text-shadow:4px 4px 0 var(--coral);letter-spacing:-.02em}
+.hero .sub{font:800 clamp(18px,3.4vw,28px) Montserrat,sans-serif;margin:18px 0 8px}
+.hero p{max-width:560px;color:var(--mute)}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.facts span{background:#ffffff14;border:1px solid #ffffff26;border-radius:999px;padding:7px 16px;font-weight:600;font-size:14px}
+.bubbles i{position:absolute;border:2px solid #ffffff44;border-radius:50%;animation:rise 14s linear infinite;opacity:0}
+.bubbles i:nth-child(1){width:18px;height:18px;right:12%;bottom:-30px}
+.bubbles i:nth-child(2){width:34px;height:34px;right:24%;bottom:-40px;animation-delay:5s}
+.bubbles i:nth-child(3){width:12px;height:12px;right:6%;bottom:-20px;animation-delay:9s}
+@keyframes rise{0%{transform:translateY(0);opacity:.9}100%{transform:translateY(-620px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.bubbles i{animation:none}}
+/* sections */
+section{padding:56px 0}
+h2{font-size:clamp(26px,4.5vw,38px);font-weight:800;margin-bottom:26px}
+/* itinerary as dive line */
+.line{list-style:none;padding:0;border-left:3px dashed var(--reef);margin-left:10px}
+.line li{position:relative;padding:0 0 30px 30px}
+.line li::before{content:"";position:absolute;left:-11px;top:4px;width:19px;height:19px;border-radius:50%;background:var(--abyss);border:4px solid var(--sun)}
+.line b{font:800 20px Montserrat,sans-serif;color:var(--sun);margin-right:10px}
+.line p{max-width:640px;margin-top:4px;color:#cfe3ec}
+.note{margin-top:6px;color:var(--coral);font-style:italic}
+/* prices */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
+.card{background:var(--deep);border:1px solid #ffffff1f;border-radius:14px;overflow:hidden}
+.card h3{background:var(--sun);color:var(--abyss);font-size:17px;font-weight:900;padding:14px 18px}
+.card ul{list-style:none;padding:0}
+.card li{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:14px 18px;border-top:1px solid #ffffff14}
+.card li:first-child{border-top:0}
+.card small{display:block;color:var(--mute)}
+.price{font:900 24px Montserrat,sans-serif;white-space:nowrap}
+.price em{font:600 12px "Open Sans",sans-serif;color:var(--mute);font-style:normal;margin-left:3px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:18px}
+.box{border-radius:14px;padding:20px 22px;background:var(--deep);border:1px solid #ffffff1f}
+.box h3{font-size:18px;margin-bottom:10px}
+.box.hi{background:linear-gradient(135deg,#12607a,#0b2a45)}
+.box ul{padding-left:0;list-style:none}
+.box li{padding:6px 0;display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed #ffffff22}
+.box li:last-child{border:0}
+/* partner */
+.ad{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;background:#0f1a2b;border:2px solid #f9b54c;border-radius:22px;padding:36px 34px}
+@media(max-width:760px){.ad{grid-template-columns:1fr;padding:26px 20px}}
+.ad .tag{display:inline-block;border:1.5px solid #f9b54c;color:#f9b54c;border-radius:8px;padding:5px 14px;font:700 14px Montserrat,sans-serif}
+.ad h3{font-size:clamp(26px,4.6vw,38px);font-weight:800;margin:20px 0 14px}
+.ad h3 em{font-style:normal;color:#f9b54c}
+.ad-sub{color:var(--mute);margin-bottom:18px}
+.ad ul{list-style:none;padding:0;display:grid;gap:12px}
+.ad li{display:flex;gap:12px;align-items:center}
+.ad li::before{content:"";flex:none;width:12px;height:12px;border-radius:50%;background:#f9b54c}
+.deal{border:1.5px dashed #f9b54c;border-radius:14px;background:#16233f;padding:18px 22px;margin-bottom:20px}
+.deal small{display:block;color:#c5d3e6}
+.deal strong{font:800 30px Montserrat,sans-serif;color:#f9b54c}
+.ad dl{display:grid;gap:10px;font-size:14px}
+.ad dt{font-weight:700;color:#fff}
+.ad dd{color:var(--mute);margin:0}
+.ad .go{display:inline-block;margin-top:22px;background:linear-gradient(90deg,#f9b54c,#ee7b50);color:#1b1205;text-decoration:none;font:800 16px Montserrat,sans-serif;padding:15px 30px;border-radius:12px}
+.ad .url{display:block;margin-top:12px;color:var(--mute);font-size:14px}
+/* gallery */
+.stage{position:relative;aspect-ratio:16/10;background:#000;border-radius:16px;overflow:hidden;cursor:zoom-in;touch-action:pan-y}
+@media(max-width:600px){.stage{aspect-ratio:4/5}}
+.gbg{position:absolute;inset:-30px;background:center/cover;filter:blur(28px) brightness(.55)}
+#gimg{position:relative;display:block;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .35s;user-select:none;-webkit-user-drag:none}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(7,18,43,.72);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.nav.prev{left:12px}.nav.next{right:12px}
+.gbar{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.7));font:700 14px Montserrat,sans-serif;pointer-events:none}
+.gbar button{pointer-events:auto;background:rgba(7,18,43,.72);color:#fff;border:0;border-radius:8px;padding:6px 12px;font-size:15px;cursor:pointer}
+.ghint{color:var(--mute);font-size:14px;margin-top:10px}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:12px 2px;position:relative;scrollbar-width:thin}
+.thumbs button{flex:none;width:84px;height:60px;border:2px solid transparent;border-radius:8px;overflow:hidden;padding:0;background:none;cursor:pointer;opacity:.55}
+.thumbs button.on{border-color:var(--sun);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.95)}
+.lb[hidden]{display:none}
+.lbv{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;touch-action:none;cursor:grab}
+.lbv img{max-width:100%;max-height:100%;transform-origin:center;user-select:none;-webkit-user-drag:none;will-change:transform}
+.lb .ctl{position:absolute;z-index:2;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:50%;width:46px;height:46px;font-size:24px;cursor:pointer}
+.lb .x{top:calc(14px + env(safe-area-inset-top,0px));right:14px}
+.lb .lp{left:12px;top:50%;margin-top:-23px}.lb .ln{right:12px;top:50%;margin-top:-23px}
+.lb .zb{position:absolute;z-index:2;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center;font:700 14px Montserrat,sans-serif;background:rgba(255,255,255,.14);border-radius:999px;padding:4px 8px}
+.lb .zb button{background:none;border:0;color:#fff;font-size:22px;width:38px;height:38px;cursor:pointer}
+/* contact */
+.contact{display:grid;gap:10px;font-size:17px}
+.contact a{font-weight:700}
+.payrow{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px;color:var(--mute);font-size:14px}
+.payrow img{height:60px;width:auto;background:#fff;border-radius:12px;padding:8px 14px}
+.pay{margin-top:14px;color:var(--mute);font-size:14px}
+footer{padding:28px 0 12px;text-align:center;color:var(--mute);font-size:13px}
+/* floating buttons */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(7,18,43,.96);border-top:1px solid #ffffff26;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;justify-content:center}
+.dock a{flex:1;max-width:220px;text-align:center;text-decoration:none;font:800 15px Montserrat,sans-serif;padding:13px 8px;border-radius:10px;color:#fff}
+.b-call{background:var(--coral)}.b-zalo{background:#0068ff}.b-wa{background:#1faa57}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top">PHU QUOC DIVERS</a>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="en" aria-pressed="true">EN</button>
+    <button data-l="vi" aria-pressed="false">VI</button>
+    <button data-l="ru" aria-pressed="false">RU</button>
+  </div>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="bubbles" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="wrap">
+  <h1>PHU QUOC DIVERS</h1>
+  <p class="sub" data-t="sub"></p>
+  <p data-t="lead"></p>
+  <div class="facts">
+    <span data-t="f1"></span><span data-t="f2"></span><span data-t="f3"></span>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2 data-t="h_day"></h2>
+  <ol class="line">
+    <li><b>08:00</b><span data-t="s1"></span></li>
+    <li><b>09:30</b><span data-t="s2t"></span><p data-t="s2"></p></li>
+    <li><b>12:00</b><span data-t="s3t"></span><p data-t="s3"></p></li>
+    <li><b>13:30–14:30</b><span data-t="s4t"></span><p data-t="s4"></p></li>
+  </ol>
+  <p class="note" data-t="weather"></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 data-t="h_gal"></h2>
+  <div class="stage" id="stage">
+    <div class="gbg" id="gbg"></div>
+    <img id="gimg" alt="">
+    <button class="nav prev" id="gp" data-a="g_prev">‹</button>
+    <button class="nav next" id="gn" data-a="g_next">›</button>
+    <div class="gbar"><span id="gcnt">1 / 20</span><button id="gpp" data-a="g_pause">❚❚</button></div>
+  </div>
+  <div class="thumbs" id="thumbs"></div>
+  <p class="ghint" data-t="g_hint"></p>
+</div></section>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true">
+  <div class="lbv" id="lbv"><img id="lbimg" alt="" draggable="false"></div>
+  <button class="ctl x" id="lbx" data-a="g_close">✕</button>
+  <button class="ctl lp" id="lbp" data-a="g_prev">‹</button>
+  <button class="ctl ln" id="lbn" data-a="g_next">›</button>
+  <div class="zb"><button id="zo" aria-label="−">−</button><span id="zv">100%</span><button id="zi" aria-label="+">+</button></div>
+</div>
+
+<section style="background:#0a1d38"><div class="wrap">
+  <h2 data-t="h_price"></h2>
+  <div class="grid">
+    <div class="card"><h3 data-t="try"></h3><ul>
+      <li><span data-t="d1_30"></span><span class="price">120<em>USD</em></span></li>
+      <li><span data-t="d2_60"></span><span class="price">120<em>USD</em></span></li></ul></div>
+    <div class="card"><h3 data-t="cert"></h3><ul>
+      <li><span data-t="d1_50"></span><span class="price">120<em>USD</em></span></li>
+      <li><span data-t="d2_100"></span><span class="price">120<em>USD</em></span></li></ul></div>
+    <div class="card"><h3 data-t="snk"></h3><ul>
+      <li><span data-t="snk_2"></span><span class="price">60<em>USD</em></span></li></ul></div>
+  </div>
+  <p class="pay" data-t="perpax"></p>
+  <div class="two">
+    <div class="box hi"><h3 data-t="inc_h"></h3><p data-t="inc"></p></div>
+    <div class="box"><h3 data-t="pick_h"></h3><ul>
+      <li><span>Ong Lang</span><b>5 USD</b></li>
+      <li><span>Cua Can, Vung Bau</span><b>10 USD</b></li>
+      <li><span>Bai Dai, Ganh Dau, Vinpearl</span><b>15 USD</b></li></ul>
+      <p class="pay" data-t="pick_n"></p></div>
+  </div>
+  <div class="box" style="margin-top:18px"><h3 data-t="priv_h"></h3><p data-t="priv"></p></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="ad">
+    <div>
+      <span class="tag" data-t="ad_tag"></span>
+      <h3><span data-t="ad_h1"></span> <em>Ocean Sports VN</em></h3>
+      <p class="ad-sub" data-t="ad_sub"></p>
+      <ul><li data-t="ad_b1"></li><li data-t="ad_b2"></li><li data-t="ad_b3"></li></ul>
+    </div>
+    <div>
+      <div class="deal"><small data-t="ad_deal"></small><strong data-t="ad_off"></strong></div>
+      <dl>
+        <div><dt>Nha Trang</dt><dd>39 Mạc Đĩnh Chi, Phước Tiến<br>8:30–19:00</dd></div>
+        <div><dt>Phú Quốc</dt><dd><span data-t="ad_pq"></span><br>7:00–20:00</dd></div>
+        <div><dt>Quy Nhơn</dt><dd>71 Bùi Thị Xuân, Bình Định<br><span data-t="ad_qn"></span></dd></div>
+      </dl>
+      <a class="go" id="shop" href="#" target="_blank" rel="noopener" data-t="shop_btn"></a>
+      <span class="url">www.oceansportsvn.com</span>
+    </div>
+  </div>
+  </div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 data-t="h_contact"></h2>
+  <div class="contact">
+    <div>📞 <a href="tel:0907067786" data-ch="call">0907 067 786</a> · <a href="tel:02977309986" data-ch="call">0297 730 9986</a></div>
+    <div>✉️ <a href="mailto:booking@redrivertours.com.vn">booking@redrivertours.com.vn</a></div>
+    <div>📍 <span data-t="addr"></span></div>
+  </div>
+  <p class="pay" data-t="online"></p>
+  <div class="payrow"><span data-t="pay_h"></span><img src="images/visa-mastercard-paypal.png" alt="Visa, Mastercard, PayPal" width="640" height="313"></div>
+</div></section>
+</main>
+
+<footer>© Phu Quoc Divers 2026–2027</footer>
+
+<nav class="dock" aria-label="Contact">
+  <a class="b-call" href="tel:0907067786" data-ch="call" data-t="call"></a>
+  <a class="b-zalo" href="https://zalo.me/0907067786" target="_blank" rel="noopener" data-ch="zalo">Zalo</a>
+  <a class="b-wa" href="https://wa.me/84907067786" target="_blank" rel="noopener" data-ch="wa">WhatsApp</a>
+</nav>
+
+<script>
+/* ===== SETTINGS ===== */
+const TRACK_URL = "";            // paste your Google Apps Script web-app URL here
+const SITE_NAME = "PhuQuocDivers";
+const SHOP_URL  = "https://www.oceansportsvn.com";
+/* ==================== */
+
+const T = {
+en:{sub:"Diving / Snorkeling",lead:"A one-day boat trip to the coral islets of Phu Quoc. Dive with an instructor or snorkel, lunch on board, hotel pickup included.",
+f1:"Departure 08:00",f2:"Return 14:30",f3:"English / Russian-speaking instructor",
+h_day:"Your day",s1:"Hotel pickup and transfer to the pier.",s2t:"Board the boat",s2:"Explore Gham Ghi and Kim Quy islets, known for crystal-clear water and vibrant coral reefs. Scuba dive (Fun Dive or Try Dive) or snorkel.",
+s3t:"Lunch on board",s3:"Fresh fruit buffet and a light lunch. Relax on deck with the sea breeze.",s4t:"Back to the pier",s4:"Transfer back to your hotel.",
+weather:"Diving and snorkeling locations may vary depending on weather conditions.",
+h_price:"Prices",try:"Try Diving",cert:"Certified Divers",snk:"Snorkeling",
+d1_30:"1 dive (30 min)",d2_60:"2 dives (60 min)",d1_50:"1 dive (50 min)",d2_100:"2 dives (100 min)",snk_2:"2 times (100 min)",perpax:"Price per person.",
+inc_h:"Price includes",inc:"English- or Russian-speaking instructor, transfer, boat, light lunch, 1 bottle of water per guest, diving and snorkeling equipment.",
+pick_h:"Extra pick-up",pick_n:"Meeting point: 379 Tran Hung Dao, Duong To, Phu Quoc.",
+priv_h:"Private diving",priv:"Available for your group, family and friends. Contact us for advance booking. Training and courses are discussed individually with instructors.",
+ad_tag:"Recommended for you",ad_h1:"Need dive gear? We shop at",ad_sub:"Genuine dive equipment from Europe and the USA.",ad_b1:"Fins, masks, snorkels, wetsuits and accessories",ad_b2:"Regulator servicing available",ad_b3:"Free shipping on orders over 4 million VND",ad_deal:"Exclusive offer for guests of this page",ad_off:"10% off",ad_pq:"Mobile sales in Duong Dong",ad_qn:"Open only when you call ahead",shop_btn:"Visit the shop",
+h_gal:"Gallery",g_hint:"Tap a photo to zoom in.",g_alt:"Phu Quoc Divers photo",g_prev:"Previous",g_next:"Next",g_pause:"Pause",g_play:"Play",g_close:"Close",pay_h:"Accepted payments:",h_contact:"Book now",addr:"379 Tran Hung Dao, Duong To, Phu Quoc Special Zone, An Giang",online:"Our instructors are always online to support you.",call:"Call"},
+vi:{sub:"Lặn biển / Lặn ngắm san hô",lead:"Chuyến tàu trong ngày đến các hòn đảo san hô của Phú Quốc. Lặn cùng huấn luyện viên hoặc lặn ngắm san hô, ăn trưa trên tàu, có xe đón tại khách sạn.",
+f1:"Khởi hành 08:00",f2:"Về lúc 14:30",f3:"HLV nói tiếng Anh / Nga",
+h_day:"Lịch trình trong ngày",s1:"Xe đón tại khách sạn và đưa ra bến tàu.",s2t:"Lên tàu",s2:"Khám phá hòn Gầm Ghì và Kim Quy, nổi tiếng với nước trong vắt và rạn san hô rực rỡ. Lặn bình khí (Fun Dive hoặc Try Dive) hoặc lặn ngắm san hô.",
+s3t:"Ăn trưa trên tàu",s3:"Buffet trái cây tươi và bữa trưa nhẹ. Thư giãn trên boong, đón gió biển.",s4t:"Về lại bến tàu",s4:"Xe đưa bạn về khách sạn.",
+weather:"Điểm lặn và lặn ngắm san hô có thể thay đổi tùy điều kiện thời tiết.",
+h_price:"Bảng giá",try:"Lặn thử (Try Diving)",cert:"Thợ lặn có chứng chỉ",snk:"Lặn ngắm san hô",
+d1_30:"1 lần lặn (30 phút)",d2_60:"2 lần lặn (60 phút)",d1_50:"1 lần lặn (50 phút)",d2_100:"2 lần lặn (100 phút)",snk_2:"2 lượt (100 phút)",perpax:"Giá cho mỗi người.",
+inc_h:"Giá đã bao gồm",inc:"Huấn luyện viên nói tiếng Anh hoặc tiếng Nga, xe đưa đón, tàu, bữa trưa nhẹ, 1 chai nước mỗi khách, dụng cụ lặn và lặn ngắm san hô.",
+pick_h:"Phụ thu đón khách",pick_n:"Điểm hẹn: 379 Trần Hưng Đạo, Dương Tơ, Phú Quốc.",
+priv_h:"Lặn riêng",priv:"Dành cho nhóm, gia đình và bạn bè. Vui lòng liên hệ đặt trước. Đào tạo và các khóa học sẽ trao đổi riêng với huấn luyện viên.",
+ad_tag:"Gợi ý cho bạn",ad_h1:"Cần đồ lặn? Chúng tôi hay ghé",ad_sub:"Thiết bị lặn chính hãng từ châu Âu và Mỹ.",ad_b1:"Chân nhái, kính lặn, ống thở, đồ lặn và phụ kiện",ad_b2:"Nhận bảo dưỡng bộ điều áp",ad_b3:"Miễn phí vận chuyển cho đơn trên 4 triệu đồng",ad_deal:"Ưu đãi riêng cho khách của trang này",ad_off:"Giảm 10%",ad_pq:"Bán lưu động tại Dương Đông",ad_qn:"Chỉ mở khi gọi điện trước",shop_btn:"Xem cửa hàng",
+h_gal:"Hình ảnh",g_hint:"Bấm vào ảnh để phóng to.",g_alt:"Ảnh Phu Quoc Divers",g_prev:"Ảnh trước",g_next:"Ảnh sau",g_pause:"Tạm dừng",g_play:"Phát",g_close:"Đóng",pay_h:"Chấp nhận thanh toán:",h_contact:"Đặt tour ngay",addr:"379 Trần Hưng Đạo, Xã Dương Tơ, Thành phố Phú Quốc, An Giang",online:"Huấn luyện viên luôn online để hỗ trợ bạn.",call:"Gọi"},
+ru:{sub:"Дайвинг / Сноркелинг",lead:"Однодневная морская поездка к коралловым островкам Фукуока. Погружения с инструктором или сноркелинг, обед на борту, трансфер из отеля.",
+f1:"Отправление 8:00",f2:"Возвращение 14:30",f3:"Инструктор говорит по-английски и по-русски",
+h_day:"Программа дня",s1:"Трансфер из отеля к причалу.",s2t:"Посадка на катер",s2:"Посещение островков Гам-Ги и Ким-Куи, известных кристально чистой водой и яркими коралловыми рифами. Дайвинг (Fun Dive или Try Dive) или сноркелинг.",
+s3t:"Обед на борту",s3:"Фруктовый буфет и лёгкий обед. Отдых на палубе, свежий морской бриз.",s4t:"Возвращение к причалу",s4:"Трансфер обратно в отель.",
+weather:"Места для дайвинга и сноркелинга могут меняться в зависимости от погодных условий.",
+h_price:"Цены",try:"Пробное погружение",cert:"Сертифицированные дайверы",snk:"Сноркелинг",
+d1_30:"1 погружение (30 минут)",d2_60:"2 погружения (60 минут)",d1_50:"1 погружение (50 минут)",d2_100:"2 погружения (100 минут)",snk_2:"2 раза (100 минут)",perpax:"Цена за человека.",
+inc_h:"В стоимость включено",inc:"Инструктор, говорящий на английском или русском языке, трансфер, катер, лёгкий обед, 1 бутылка воды на каждого гостя, оборудование для дайвинга и сноркелинга.",
+pick_h:"Доплата за трансфер",pick_n:"Место встречи: 379 Tran Hung Dao, Duong To, Phu Quoc.",
+priv_h:"Индивидуальный дайвинг",priv:"Для вашей группы, семьи и друзей. Свяжитесь с нами для предварительного бронирования. Обучение и курсы обсуждаются индивидуально с инструкторами.",
+ad_tag:"Рекомендуем",ad_h1:"Нужно снаряжение? Мы заглядываем в",ad_sub:"Оригинальное снаряжение для дайвинга из Европы и США.",ad_b1:"Ласты, маски, трубки, гидрокостюмы и аксессуары",ad_b2:"Обслуживание регуляторов",ad_b3:"Бесплатная доставка при заказе от 4 млн донгов",ad_deal:"Эксклюзивное предложение для гостей этой страницы",ad_off:"Скидка 10%",ad_pq:"Выездная торговля в Зыонг Донг",ad_qn:"Открыто только по предварительному звонку",shop_btn:"Открыть магазин",
+h_gal:"Галерея",g_hint:"Нажмите на фото, чтобы увеличить.",g_alt:"Фото Phu Quoc Divers",g_prev:"Назад",g_next:"Вперёд",g_pause:"Пауза",g_play:"Играть",g_close:"Закрыть",pay_h:"Принимаем оплату через:",h_contact:"Забронировать",addr:"379 Tran Hung Dao, Duong To, Phu Quoc Special Zone, An Giang",online:"Ваши инструкторы всегда на связи — пишите!",call:"Позвонить"}
+};
+const titles={en:"Phu Quoc Divers – Diving & Snorkeling",vi:"Phu Quoc Divers – Lặn biển & Lặn ngắm san hô",ru:"Phu Quoc Divers – Дайвинг и сноркелинг"};
+
+var setLang=function(l){
+  document.documentElement.lang=l;
+  document.title=titles[l];
+  document.querySelectorAll("[data-t]").forEach(e=>{e.textContent=T[l][e.dataset.t]});
+  document.querySelectorAll("[data-a]").forEach(e=>e.setAttribute("aria-label",T[l][e.dataset.a]));
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));
+  try{localStorage.setItem("lang",l)}catch(e){}
+};
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.l)));
+let l0="en";
+try{l0=localStorage.getItem("lang")||((navigator.language||"").slice(0,2))}catch(e){}
+setLang(T[l0]?l0:"en");
+
+/* click counter: channels call, zalo, wa, shop */
+const shop=document.getElementById("shop");shop.href=SHOP_URL;shop.dataset.ch="shop";
+document.querySelectorAll("[data-ch]").forEach(a=>a.addEventListener("click",()=>{
+  if(!TRACK_URL)return;
+  const u=TRACK_URL+(TRACK_URL.includes("?")?"&":"?")+"site="+SITE_NAME+"&ch="+a.dataset.ch+"&t="+Date.now();
+  try{fetch(u,{mode:"no-cors",keepalive:true})}catch(e){}
+}));
+
+/* ===== GALLERY: auto-slide every 2s, arrows, thumbnails, tap to zoom ===== */
+(function(){
+const N=20,GAP=2000,$=id=>document.getElementById(id);
+const stage=$("stage"),img=$("gimg"),bg=$("gbg"),cnt=$("gcnt"),thumbs=$("thumbs"),pp=$("gpp");
+const lb=$("lb"),lbv=$("lbv"),lbimg=$("lbimg"),zv=$("zv");
+const L=()=>T[document.documentElement.lang]||T.en;
+const src=k=>"images/gallery-"+(k+1)+".jpg";
+let i=0,timer=null,playing=!matchMedia("(prefers-reduced-motion:reduce)").matches,hover=false,open=false;
+
+for(let k=0;k<N;k++){const b=document.createElement("button");
+  b.innerHTML='<img loading="lazy" alt="" src="images/thumbs/gallery-'+(k+1)+'.jpg">';
+  b.addEventListener("click",()=>{go(k);restart()});thumbs.appendChild(b)}
+
+function go(k){
+  i=(k+N)%N;const s=src(i);
+  img.style.opacity=0;img.onload=()=>{img.style.opacity=1};img.src=s;img.alt=L().g_alt+" "+(i+1);
+  bg.style.backgroundImage="url("+s+")";
+  cnt.textContent=(i+1)+" / "+N;
+  [...thumbs.children].forEach((b,j)=>b.classList.toggle("on",j===i));
+  const t=thumbs.children[i];thumbs.scrollTo({left:t.offsetLeft-(thumbs.clientWidth-t.clientWidth)/2,behavior:"smooth"});
+  new Image().src=src((i+1)%N);
+  if(open){lbimg.src=s;resetZoom()}
+}
+function tick(){if(playing&&!hover&&!open)go(i+1)}
+function restart(){clearInterval(timer);timer=setInterval(tick,GAP)}
+function setPlay(p){playing=p;pp.textContent=p?"❚❚":"▶";pp.setAttribute("aria-label",p?L().g_pause:L().g_play);pp.dataset.a=p?"g_pause":"g_play"}
+pp.addEventListener("click",e=>{e.stopPropagation();setPlay(!playing)});
+$("gp").addEventListener("click",e=>{e.stopPropagation();go(i-1);restart()});
+$("gn").addEventListener("click",e=>{e.stopPropagation();go(i+1);restart()});
+stage.addEventListener("mouseenter",()=>hover=true);
+stage.addEventListener("mouseleave",()=>hover=false);
+
+/* swipe or tap on the slide */
+let sx=null;
+stage.addEventListener("pointerdown",e=>{if(!e.target.closest("button"))sx=e.clientX});
+stage.addEventListener("pointerup",e=>{
+  if(sx===null)return;const dx=e.clientX-sx;sx=null;
+  if(Math.abs(dx)>45){go(i+(dx<0?1:-1));restart()}else openLb();
+});
+
+/* lightbox with zoom */
+let sc=1,tx=0,ty=0;const P=new Map();let pinch=0,last=0,lx=0,ly=0,sw=null;
+function apply(){lbimg.style.transform="translate("+tx+"px,"+ty+"px) scale("+sc+")";zv.textContent=Math.round(sc*100)+"%";lbv.style.cursor=sc>1?"grab":"zoom-in"}
+function resetZoom(){sc=1;tx=ty=0;apply()}
+function zoomAt(f,px,py){
+  const r=lbv.getBoundingClientRect(),cx=px-(r.left+r.width/2),cy=py-(r.top+r.height/2);
+  const s2=Math.min(6,Math.max(1,sc*f)),k=s2/sc;
+  tx=cx-(cx-tx)*k;ty=cy-(cy-ty)*k;sc=s2;if(sc===1){tx=ty=0}apply();
+}
+function zoomCenter(f){const r=lbv.getBoundingClientRect();zoomAt(f,r.left+r.width/2,r.top+r.height/2)}
+function openLb(){open=true;lb.hidden=false;document.body.style.overflow="hidden";lbimg.src=src(i);lbimg.alt=img.alt;resetZoom();$("lbx").focus()}
+function closeLb(){open=false;lb.hidden=true;document.body.style.overflow="";restart()}
+$("lbx").addEventListener("click",closeLb);
+$("lbp").addEventListener("click",()=>go(i-1));
+$("lbn").addEventListener("click",()=>go(i+1));
+$("zi").addEventListener("click",()=>zoomCenter(1.5));
+$("zo").addEventListener("click",()=>zoomCenter(1/1.5));
+lbv.addEventListener("wheel",e=>{e.preventDefault();zoomAt(e.deltaY<0?1.2:1/1.2,e.clientX,e.clientY)},{passive:false});
+lbv.addEventListener("pointerdown",e=>{lbv.setPointerCapture(e.pointerId);P.set(e.pointerId,[e.clientX,e.clientY]);lx=e.clientX;ly=e.clientY;sw=P.size===1?[e.clientX,e.clientY]:null;
+  if(P.size===2){const[a,b]=[...P.values()];pinch=Math.hypot(a[0]-b[0],a[1]-b[1])}});
+lbv.addEventListener("pointermove",e=>{
+  if(!P.has(e.pointerId))return;P.set(e.pointerId,[e.clientX,e.clientY]);
+  if(P.size===2){const[a,b]=[...P.values()],d=Math.hypot(a[0]-b[0],a[1]-b[1]);if(pinch)zoomAt(d/pinch,(a[0]+b[0])/2,(a[1]+b[1])/2);pinch=d;sw=null}
+  else if(sc>1){tx+=e.clientX-lx;ty+=e.clientY-ly;lx=e.clientX;ly=e.clientY;apply()}
+});
+function up(e){
+  const had=P.has(e.pointerId);P.delete(e.pointerId);pinch=0;
+  if(!had||P.size)return;
+  if(sw){const dx=e.clientX-sw[0],dy=e.clientY-sw[1];
+    if(sc===1&&Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){go(i+(dx<0?1:-1))}
+    else if(Math.abs(dx)<8&&Math.abs(dy)<8){
+      if(e.target===lbv){closeLb()}
+      else{const n=Date.now();if(n-last<300){sc>1?resetZoom():zoomAt(2.5,e.clientX,e.clientY);last=0}else last=n}}}
+  sw=null;
+}
+lbv.addEventListener("pointerup",up);lbv.addEventListener("pointercancel",e=>{P.delete(e.pointerId);sw=null});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"&&open)closeLb();
+  else if(e.key==="ArrowLeft"&&(open||stage.matches(":hover")||stage.contains(document.activeElement))){go(i-1);restart()}
+  else if(e.key==="ArrowRight"&&(open||stage.matches(":hover")||stage.contains(document.activeElement))){go(i+1);restart()}
+  else if(open&&(e.key==="+"||e.key==="="))zoomCenter(1.5);
+  else if(open&&e.key==="-")zoomCenter(1/1.5);
+});
+
+go(0);setPlay(playing);restart();
+const _sl=setLang;setLang=function(l){_sl(l);img.alt=L().g_alt+" "+(i+1);setPlay(playing)};
+})();
+</script>
+</body>
+</html>
