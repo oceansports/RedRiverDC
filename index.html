@@ -109,6 +109,15 @@ h2{font-size:clamp(26px,4.5vw,38px);font-weight:800;margin-bottom:26px}
 .lb .lp{left:12px;top:50%;margin-top:-23px}.lb .ln{right:12px;top:50%;margin-top:-23px}
 .lb .zb{position:absolute;z-index:2;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center;font:700 14px Montserrat,sans-serif;background:rgba(255,255,255,.14);border-radius:999px;padding:4px 8px}
 .lb .zb button{background:none;border:0;color:#fff;font-size:22px;width:38px;height:38px;cursor:pointer}
+/* dive maps */
+.mapview{background:#06122a;border:1px solid #ffffff1f;border-radius:16px;padding:8px;display:flex;justify-content:center;cursor:zoom-in}
+.mapview img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;border-radius:10px}
+.mcap{margin:14px 2px 0;font:800 18px Montserrat,sans-serif}
+.mtabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.mtabs button{background:var(--deep);border:2px solid transparent;border-radius:12px;padding:0;overflow:hidden;color:#fff;cursor:pointer;opacity:.7;font:700 13px Montserrat,sans-serif}
+.mtabs button.on{border-color:var(--sun);opacity:1}
+.mtabs button img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+.mtabs span{display:block;padding:7px 4px}
 /* contact */
 .contact{display:grid;gap:10px;font-size:17px}
 .contact a{font-weight:700}
@@ -175,6 +184,14 @@ footer{padding:28px 0 12px;text-align:center;color:var(--mute);font-size:13px}
   <button class="ctl ln" id="lbn" data-a="g_next">›</button>
   <div class="zb"><button id="zo" aria-label="−">−</button><span id="zv">100%</span><button id="zi" aria-label="+">+</button></div>
 </div>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 data-t="h_map"></h2>
+  <div class="mapview" id="mapview"><img id="mimg" alt=""></div>
+  <p class="mcap" id="mcap"></p>
+  <div class="mtabs" id="mtabs"></div>
+  <p class="ghint" data-t="map_hint"></p>
+</div></section>
 
 <section style="background:#0a1d38"><div class="wrap">
   <h2 data-t="h_price"></h2>
@@ -243,7 +260,7 @@ footer{padding:28px 0 12px;text-align:center;color:var(--mute);font-size:13px}
 
 <script>
 /* ===== SETTINGS ===== */
-const TRACK_URL = "https://script.google.com/macros/s/AKfycbzW_WvEA93x-V01ah_UHRTQS1A-sDfUk8AWM11Kn4F-WsYQjTPx1vCScWW85h7ITfoxRg/exec";      // paste your Google Apps Script web-app URL here
+const TRACK_URL = "https://script.google.com/macros/s/AKfycbzW_WvEA93x-V01ah_UHRTQS1A-sDfUk8AWM11Kn4F-WsYQjTPx1vCScWW85h7ITfoxRg/exec";            // paste your Google Apps Script web-app URL here
 const SITE_NAME = "PhuQuocDivers";
 const SHOP_URL  = "https://www.oceansportsvn.com";
 /* ==================== */
@@ -260,7 +277,7 @@ inc_h:"Price includes",inc:"English- or Russian-speaking instructor, transfer, b
 pick_h:"Extra pick-up",pick_n:"Meeting point: 379 Tran Hung Dao, Duong To, Phu Quoc.",
 priv_h:"Private diving",priv:"Available for your group, family and friends. Contact us for advance booking. Training and courses are discussed individually with instructors.",
 ad_tag:"Recommended for you",ad_h1:"Need dive gear? We shop at",ad_sub:"Genuine dive equipment from Europe and the USA.",ad_b1:"Fins, masks, snorkels, wetsuits and accessories",ad_b2:"Regulator servicing available",ad_b3:"Free shipping on orders over 4 million VND",ad_deal:"Exclusive offer for guests of this page",ad_off:"10% off",ad_pq:"Mobile sales in Duong Dong",ad_qn:"Open only when you call ahead",shop_btn:"Visit the shop",
-h_gal:"Gallery",g_hint:"Tap a photo to zoom in.",g_alt:"Phu Quoc Divers photo",g_prev:"Previous",g_next:"Next",g_pause:"Pause",g_play:"Play",g_close:"Close",pay_h:"Accepted payments:",h_contact:"Book now",addr:"379 Tran Hung Dao, Duong To, Phu Quoc Special Zone, An Giang",online:"Our instructors are always online to support you.",call:"Call"},
+h_gal:"Gallery",g_hint:"Tap a photo to zoom in.",g_alt:"Phu Quoc Divers photo",g_prev:"Previous",g_next:"Next",g_pause:"Pause",g_play:"Play",g_close:"Close",pay_h:"Accepted payments:",h_map:"Dive site maps",map_hint:"Tap a map to zoom in.",m1t:"Overview",m2t:"Gam Ghi",m3t:"Kim Quy",m4t:"Mong Tay",m1:"Phu Quoc dive map: south Phu Quoc dive sites",m2:"Gam Ghi dive site",m3:"Kim Quy dive site",m4:"Mong Tay dive site",h_contact:"Book now",addr:"379 Tran Hung Dao, Duong To, Phu Quoc Special Zone, An Giang",online:"Our instructors are always online to support you.",call:"Call"},
 vi:{sub:"Lặn biển / Lặn ngắm san hô",lead:"Chuyến tàu trong ngày đến các hòn đảo san hô của Phú Quốc. Lặn cùng huấn luyện viên hoặc lặn ngắm san hô, ăn trưa trên tàu, có xe đón tại khách sạn.",
 f1:"Khởi hành 08:00",f2:"Về lúc 14:30",f3:"HLV nói tiếng Anh / Nga",
 h_day:"Lịch trình trong ngày",s1:"Xe đón tại khách sạn và đưa ra bến tàu.",s2t:"Lên tàu",s2:"Khám phá hòn Gầm Ghì và Kim Quy, nổi tiếng với nước trong vắt và rạn san hô rực rỡ. Lặn bình khí (Fun Dive hoặc Try Dive) hoặc lặn ngắm san hô.",
@@ -272,7 +289,7 @@ inc_h:"Giá đã bao gồm",inc:"Huấn luyện viên nói tiếng Anh hoặc ti
 pick_h:"Phụ thu đón khách",pick_n:"Điểm hẹn: 379 Trần Hưng Đạo, Dương Tơ, Phú Quốc.",
 priv_h:"Lặn riêng",priv:"Dành cho nhóm, gia đình và bạn bè. Vui lòng liên hệ đặt trước. Đào tạo và các khóa học sẽ trao đổi riêng với huấn luyện viên.",
 ad_tag:"Gợi ý cho bạn",ad_h1:"Cần đồ lặn? Chúng tôi hay ghé",ad_sub:"Thiết bị lặn chính hãng từ châu Âu và Mỹ.",ad_b1:"Chân nhái, kính lặn, ống thở, đồ lặn và phụ kiện",ad_b2:"Nhận bảo dưỡng bộ điều áp",ad_b3:"Miễn phí vận chuyển cho đơn trên 4 triệu đồng",ad_deal:"Ưu đãi riêng cho khách của trang này",ad_off:"Giảm 10%",ad_pq:"Bán lưu động tại Dương Đông",ad_qn:"Chỉ mở khi gọi điện trước",shop_btn:"Xem cửa hàng",
-h_gal:"Hình ảnh",g_hint:"Bấm vào ảnh để phóng to.",g_alt:"Ảnh Phu Quoc Divers",g_prev:"Ảnh trước",g_next:"Ảnh sau",g_pause:"Tạm dừng",g_play:"Phát",g_close:"Đóng",pay_h:"Chấp nhận thanh toán:",h_contact:"Đặt tour ngay",addr:"379 Trần Hưng Đạo, Xã Dương Tơ, Thành phố Phú Quốc, An Giang",online:"Huấn luyện viên luôn online để hỗ trợ bạn.",call:"Gọi"},
+h_gal:"Hình ảnh",g_hint:"Bấm vào ảnh để phóng to.",g_alt:"Ảnh Phu Quoc Divers",g_prev:"Ảnh trước",g_next:"Ảnh sau",g_pause:"Tạm dừng",g_play:"Phát",g_close:"Đóng",pay_h:"Chấp nhận thanh toán:",h_map:"Bản đồ điểm lặn",map_hint:"Bấm vào bản đồ để phóng to.",m1t:"Tổng quan",m2t:"Gầm Ghì",m3t:"Kim Quy",m4t:"Mong Tay",m1:"Bản đồ lặn Phú Quốc: các điểm lặn phía nam đảo",m2:"Điểm lặn Gầm Ghì",m3:"Điểm lặn Kim Quy",m4:"Điểm lặn Mong Tay",h_contact:"Đặt tour ngay",addr:"379 Trần Hưng Đạo, Xã Dương Tơ, Thành phố Phú Quốc, An Giang",online:"Huấn luyện viên luôn online để hỗ trợ bạn.",call:"Gọi"},
 ru:{sub:"Дайвинг / Сноркелинг",lead:"Однодневная морская поездка к коралловым островкам Фукуока. Погружения с инструктором или сноркелинг, обед на борту, трансфер из отеля.",
 f1:"Отправление 8:00",f2:"Возвращение 14:30",f3:"Инструктор говорит по-английски и по-русски",
 h_day:"Программа дня",s1:"Трансфер из отеля к причалу.",s2t:"Посадка на катер",s2:"Посещение островков Гам-Ги и Ким-Куи, известных кристально чистой водой и яркими коралловыми рифами. Дайвинг (Fun Dive или Try Dive) или сноркелинг.",
@@ -284,7 +301,7 @@ inc_h:"В стоимость включено",inc:"Инструктор, гов
 pick_h:"Доплата за трансфер",pick_n:"Место встречи: 379 Tran Hung Dao, Duong To, Phu Quoc.",
 priv_h:"Индивидуальный дайвинг",priv:"Для вашей группы, семьи и друзей. Свяжитесь с нами для предварительного бронирования. Обучение и курсы обсуждаются индивидуально с инструкторами.",
 ad_tag:"Рекомендуем",ad_h1:"Нужно снаряжение? Мы заглядываем в",ad_sub:"Оригинальное снаряжение для дайвинга из Европы и США.",ad_b1:"Ласты, маски, трубки, гидрокостюмы и аксессуары",ad_b2:"Обслуживание регуляторов",ad_b3:"Бесплатная доставка при заказе от 4 млн донгов",ad_deal:"Эксклюзивное предложение для гостей этой страницы",ad_off:"Скидка 10%",ad_pq:"Выездная торговля в Зыонг Донг",ad_qn:"Открыто только по предварительному звонку",shop_btn:"Открыть магазин",
-h_gal:"Галерея",g_hint:"Нажмите на фото, чтобы увеличить.",g_alt:"Фото Phu Quoc Divers",g_prev:"Назад",g_next:"Вперёд",g_pause:"Пауза",g_play:"Играть",g_close:"Закрыть",pay_h:"Принимаем оплату через:",h_contact:"Забронировать",addr:"379 Tran Hung Dao, Duong To, Phu Quoc Special Zone, An Giang",online:"Ваши инструкторы всегда на связи — пишите!",call:"Позвонить"}
+h_gal:"Галерея",g_hint:"Нажмите на фото, чтобы увеличить.",g_alt:"Фото Phu Quoc Divers",g_prev:"Назад",g_next:"Вперёд",g_pause:"Пауза",g_play:"Играть",g_close:"Закрыть",pay_h:"Принимаем оплату через:",h_map:"Карты дайв-сайтов",map_hint:"Нажмите на карту, чтобы увеличить.",m1t:"Обзор",m2t:"Гам Ги",m3t:"Ким Куи",m4t:"Монг Тай",m1:"Карта дайвинга Фукуока: южные дайв-сайты острова",m2:"Дайв-сайт Гам Ги",m3:"Дайв-сайт Ким Куи",m4:"Дайв-сайт Монг Тай",h_contact:"Забронировать",addr:"379 Tran Hung Dao, Duong To, Phu Quoc Special Zone, An Giang",online:"Ваши инструкторы всегда на связи — пишите!",call:"Позвонить"}
 };
 const titles={en:"Phu Quoc Divers – Diving & Snorkeling",vi:"Phu Quoc Divers – Lặn biển & Lặn ngắm san hô",ru:"Phu Quoc Divers – Дайвинг и сноркелинг"};
 
@@ -319,7 +336,7 @@ const stage=$("stage"),img=$("gimg"),bg=$("gbg"),cnt=$("gcnt"),thumbs=$("thumbs"
 const lb=$("lb"),lbv=$("lbv"),lbimg=$("lbimg"),zv=$("zv");
 const L=()=>T[document.documentElement.lang]||T.en;
 const src=k=>"images/gallery-"+(k+1)+".jpg";
-let i=0,timer=null,playing=!matchMedia("(prefers-reduced-motion:reduce)").matches,hover=false,open=false;
+let mode="gal",i=0,timer=null,playing=!matchMedia("(prefers-reduced-motion:reduce)").matches,hover=false,open=false;
 
 for(let k=0;k<N;k++){const b=document.createElement("button");
   b.innerHTML='<img loading="lazy" alt="" src="images/thumbs/gallery-'+(k+1)+'.jpg">';
@@ -333,7 +350,7 @@ function go(k){
   [...thumbs.children].forEach((b,j)=>b.classList.toggle("on",j===i));
   const t=thumbs.children[i];thumbs.scrollTo({left:t.offsetLeft-(thumbs.clientWidth-t.clientWidth)/2,behavior:"smooth"});
   new Image().src=src((i+1)%N);
-  if(open){lbimg.src=s;resetZoom()}
+  if(open&&mode==="gal"){lbimg.src=s;resetZoom()}
 }
 function tick(){if(playing&&!hover&&!open)go(i+1)}
 function restart(){clearInterval(timer);timer=setInterval(tick,GAP)}
@@ -362,8 +379,8 @@ function zoomAt(f,px,py){
   tx=cx-(cx-tx)*k;ty=cy-(cy-ty)*k;sc=s2;if(sc===1){tx=ty=0}apply();
 }
 function zoomCenter(f){const r=lbv.getBoundingClientRect();zoomAt(f,r.left+r.width/2,r.top+r.height/2)}
-function openLb(){open=true;lb.hidden=false;document.body.style.overflow="hidden";lbimg.src=src(i);lbimg.alt=img.alt;resetZoom();$("lbx").focus()}
-function closeLb(){open=false;lb.hidden=true;document.body.style.overflow="";restart()}
+function openLb(){mode="gal";open=true;lb.hidden=false;document.body.style.overflow="hidden";lbimg.src=src(i);lbimg.alt=img.alt;resetZoom();$("lbx").focus()}
+function closeLb(){mode="gal";$("lbp").style.display=$("lbn").style.display="";open=false;lb.hidden=true;document.body.style.overflow="";restart()}
 $("lbx").addEventListener("click",closeLb);
 $("lbp").addEventListener("click",()=>go(i-1));
 $("lbn").addEventListener("click",()=>go(i+1));
@@ -390,14 +407,33 @@ function up(e){
 lbv.addEventListener("pointerup",up);lbv.addEventListener("pointercancel",e=>{P.delete(e.pointerId);sw=null});
 document.addEventListener("keydown",e=>{
   if(e.key==="Escape"&&open)closeLb();
-  else if(e.key==="ArrowLeft"&&(open||stage.matches(":hover")||stage.contains(document.activeElement))){go(i-1);restart()}
-  else if(e.key==="ArrowRight"&&(open||stage.matches(":hover")||stage.contains(document.activeElement))){go(i+1);restart()}
+  else if(e.key==="ArrowLeft"&&(open?mode==="gal":(stage.matches(":hover")||stage.contains(document.activeElement)))){go(i-1);restart()}
+  else if(e.key==="ArrowRight"&&(open?mode==="gal":(stage.matches(":hover")||stage.contains(document.activeElement)))){go(i+1);restart()}
   else if(open&&(e.key==="+"||e.key==="="))zoomCenter(1.5);
   else if(open&&e.key==="-")zoomCenter(1/1.5);
 });
 
+window.__openImg=function(u,a){mode="map";open=true;lb.hidden=false;document.body.style.overflow="hidden";lbimg.src=u;lbimg.alt=a;$("lbp").style.display=$("lbn").style.display="none";resetZoom();$("lbx").focus()};
 go(0);setPlay(playing);restart();
 const _sl=setLang;setLang=function(l){_sl(l);img.alt=L().g_alt+" "+(i+1);setPlay(playing)};
+})();
+
+/* ===== DIVE MAPS: tabs + tap to zoom ===== */
+(function(){
+const $=id=>document.getElementById(id),L=()=>T[document.documentElement.lang]||T.en;
+const mimg=$("mimg"),mcap=$("mcap"),mtabs=$("mtabs");let cur=0;
+const FILES=[4,3,2,1]; /* tab order: overview, Gam Ghi, Kim Quy, Mong Tay = map-4, map-3, map-2, map-1 */
+for(let n=0;n<4;n++){const b=document.createElement("button");
+  b.innerHTML='<img loading="lazy" alt="" src="images/thumbs/map-'+FILES[n]+'.jpg"><span></span>';
+  b.addEventListener("click",()=>show(n));mtabs.appendChild(b)}
+function show(n){
+  cur=n;const t=L();
+  mimg.src="images/map-"+FILES[n]+".jpg";mimg.alt=t["m"+(n+1)];mcap.textContent=t["m"+(n+1)];
+  [...mtabs.children].forEach((b,j)=>{b.classList.toggle("on",j===n);b.lastChild.textContent=t["m"+(j+1)+"t"]});
+}
+$("mapview").addEventListener("click",()=>{if(window.__openImg)window.__openImg(mimg.src,mimg.alt)});
+show(0);
+const _sl=setLang;setLang=function(l){_sl(l);show(cur)};
 })();
 </script>
 </body>
